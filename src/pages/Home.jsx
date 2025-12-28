@@ -1,46 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Brain, Cpu, Play, Wifi, WifiOff, Activity } from "lucide-react";
+import { models } from "../data/models";
 
 export default function Home() {
   const [serverStatus, setServerStatus] = useState({});
   const navigate = useNavigate();
-
-  const models = [
-    {
-      id: 1,
-      name: "Chest X-Ray Classifier",
-      description: "AI Model for Detecting Lung Diseases from X-Ray Images",
-      color: "cyan",
-      gradient: "from-cyan-500 to-blue-500",
-      type: "image",
-      path: "/chestxray",
-      endpoint: "http://localhost:5000/api/predict/chest-xray",
-      healthEndpoint: "http://localhost:5000/api/health",
-    },
-    {
-      id: 2,
-      name: "Model Beta",
-      description: "Deep Learning Model for Data Analysis",
-      color: "purple",
-      gradient: "from-purple-500 to-pink-500",
-      type: "text",
-      path: "/model2",
-      endpoint: "http://localhost:5000/api/predict/model-beta",
-      healthEndpoint: "http://localhost:5000/api/health",
-    },
-    {
-      id: 3,
-      name: "Model Gamma",
-      description: "Transformer Architecture for NLP Tasks",
-      color: "green",
-      gradient: "from-green-500 to-emerald-500",
-      type: "text",
-      path: "/model3",
-      endpoint: "http://localhost:5000/api/predict/model-gamma",
-      healthEndpoint: "http://localhost:5000/api/health",
-    },
-  ];
 
   // Check server status for all models
   useEffect(() => {
